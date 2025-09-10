@@ -1,4 +1,6 @@
 start() {
+   clear
+   echo 삭제 중입니다..
    adb shell pm uninstall -k --user 0 com.android.vending
    adb shell pm uninstall -k --user 0 com.sec.android.app.samsungapps
    adb shell pm uninstall -k --user 0 com.kt.olleh.storefront
@@ -34,6 +36,8 @@ start() {
 }
 
 recover() {
+   clear
+   echo 복구 중입니다...
    adb shell pm install-existing com.android.vending
    adb shell pm install-existing com.sec.android.app.samsungapps
    adb shell pm install-existing com.kt.olleh.storefront
