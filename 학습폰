@@ -1,0 +1,82 @@
+start() {
+   adb shell pm uninstall -k --user 0 com.android.vending
+   adb shell pm uninstall -k --user 0 com.sec.android.app.samsungapps
+   adb shell pm uninstall -k --user 0 com.kt.olleh.storefront
+   adb shell pm uninstall -k --user 0 com.skt.skaf.A000Z00040
+   adb shell pm uninstall -k --user 0 com.lguplus.appstore
+   adb shell pm uninstall -k --user 0 com.google.android.youtube
+   adb shell pm uninstall -k --user 0 com.android.chrome
+   adb shell pm uninstall -k --user 0 com.google.android.gm
+   adb shell pm uninstall -k --user 0 com.google.android.apps.maps
+   adb shell pm uninstall -k --user 0 com.google.android.googlequicksearchbox
+   adb shell pm uninstall -k --user 0 com.google.android.apps.tachyon
+   adb shell pm uninstall -k --user 0 com.sec.android.app.sbrowser
+   adb shell pm uninstall -k --user 0 com.sec.android.app.shealth
+   adb shell pm uninstall -k --user 0 com.sec.android.app.fm
+   adb shell pm uninstall -k --user 0 com.samsung.android.arzone
+   adb shell pm uninstall -k --user 0 com.samsung.android.themestore
+   adb shell pm uninstall -k --user 0 com.samsung.android.app.watchmanager
+   adb shell pm uninstall -k --user 0 com.samsung.android.voc
+   adb shell pm uninstall -k --user 0 com.samsung.android.oneconnect
+   adb shell pm uninstall -k --user 0 com.samsung.android.bixby.agent
+   adb shell pm uninstall -k --user 0 com.samsung.sec.android.prd
+   adb shell pm uninstall -k --user 0 com.sec.penup
+   adb shell pm uninstall -k --user 0 com.google.android.apps.photos
+   adb shell pm uninstall -k --user 0 com.google.android.videos
+   adb shell pm uninstall -k --user 0 com.google.android.apps.docs
+   adb shell pm uninstall -k --user 0 com.google.android.apps.youtube.music
+   adb shell pm uninstall -k --user 0 com.samsung.android.app.spage
+   adb shell pm uninstall -k --user 0 com.samsung.sree
+   adb shell pm uninstall -k --user 0 com.microsoft.skydrive
+   adb shell pm uninstall -k --user 0 com.microsoft.office.outlook
+   adb shell pm uninstall -k --user 0 com.microsoft.office.officehubrow
+   adb shell pm uninstall -k --user 0 com.google.android.apps.bard
+}
+
+recover() {
+   adb shell pm install-existing com.android.vending
+   adb shell pm install-existing com.sec.android.app.samsungapps
+   adb shell pm install-existing com.kt.olleh.storefront
+   adb shell pm install-existing com.skt.skaf.A000Z00040
+   adb shell pm install-existing com.lguplus.appstore
+   adb shell pm install-existing com.google.android.youtube
+   adb shell pm install-existing com.android.chrome
+   adb shell pm install-existing com.google.android.gm
+   adb shell pm install-existing com.google.android.apps.maps
+   adb shell pm install-existing com.google.android.googlequicksearchbox
+   adb shell pm install-existing com.google.android.apps.tachyon
+   adb shell pm install-existing com.sec.android.app.sbrowser
+   adb shell pm install-existing com.sec.android.app.shealth
+   adb shell pm install-existing com.sec.android.app.fm
+   adb shell pm install-existing com.samsung.android.arzone
+   adb shell pm install-existing com.samsung.android.themestore
+   adb shell pm install-existing com.samsung.android.app.watchmanager
+   adb shell pm install-existing com.samsung.android.voc
+   adb shell pm install-existing com.samsung.android.oneconnect
+   adb shell pm install-existing com.samsung.android.bixby.agent
+   adb shell pm install-existing com.samsung.sec.android.prd
+   adb shell pm install-existing com.sec.penup
+   adb shell pm install-existing com.google.android.apps.photos
+   adb shell pm install-existing com.google.android.videos
+   adb shell pm install-existing com.google.android.apps.docs
+   adb shell pm install-existing com.google.android.apps.youtube.music
+   adb shell pm install-existing com.samsung.android.app.spage
+   adb shell pm install-existing com.samsung.sree
+   adb shell pm install-existing com.microsoft.skydrive
+   adb shell pm install-existing com.microsoft.office.outlook
+   adb shell pm install-existing com.microsoft.office.officehubrow
+   adb shell pm install-existing com.google.android.apps.bard
+}
+
+
+
+pkg install android-tools
+adb start-server
+read -p "시작, 복구 중 하나를 입력하세요."
+if [ $REPLY == 시작 ]; then
+    start
+elif [ $REPLY == 복구 ]; then
+    recover
+else
+    echo 올바르게 입력해 주세요.
+fi
