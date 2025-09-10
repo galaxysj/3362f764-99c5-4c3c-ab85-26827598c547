@@ -76,6 +76,7 @@ recover() {
 
 pkg install android-tools
 adb start-server
+clear
 read -p "시작, 복구 중 하나를 입력하세요."
 if [ $REPLY == 시작 ]; then
     start
